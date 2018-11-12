@@ -4,7 +4,7 @@
 
     <div class="col-sm-8 blog-main">
         <form action="/posts/{{$post->id}}" method="POST">
-            {{method_field("PUT")}}
+            {{method_field('PUT')}}
             {{csrf_field()}}
             <div class="form-group">
                 <label>标题</label>
@@ -14,11 +14,11 @@
                 <label>内容</label>
                 <textarea id="content" name="content" class="form-control" style="height:400px;max-height:500px;"  placeholder="这里是内容">{{$post->content}}</textarea>
             </div>
+            @include("layout.error")
             <button type="submit" class="btn btn-default">提交</button>
         </form>
         <br>
-        @include('layout.error')
     </div><!-- /.blog-main -->
 
-
+  
 @endsection

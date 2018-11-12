@@ -17,8 +17,6 @@
             <button type="submit" class="btn btn-default">提交</button>
         </form>
         <br>
-
     </div><!-- /.blog-main -->
-
 
 @endsection
