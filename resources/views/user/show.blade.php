@@ -15,7 +15,7 @@
 
 
             <footer>关注：{{$user->stars_count}}｜粉丝：{{$user->fans_count}}｜文章：{{$user->posts_count}}</footer>
-            @include("user.badges.like",['target_user'=>$user]);
+            @include("user.badges.like",['target_user'=>$user])
         </blockquote>
     </div>
     <div class="col-sm-8 blog-main">
@@ -44,7 +44,7 @@
                         <div class="blog-post" style="margin-top: 30px">
                             <p class="">{{$user->name}}</p>
                             <p class="">关注：{{$user->stars_count}}｜粉丝：{{$user->fans_count}}｜文章：{{$user->posts_count}}</p>
-                        @include("user.badges.like",['target_user'=>$user]);
+                        @include("user.badges.like",['target_user'=>$user])
                     @endforeach
                 </div>
                 <!-- /.tab-pane -->
@@ -54,7 +54,7 @@
                             <p class="">{{$user->name}}</p>
                             <p class="">关注：{{$user->stars_count}}｜粉丝：{{$user->fans_count}}｜文章：{{$user->posts_count}}</p>
                         
-                        @include("user.badges.like",['target_user'=>$user]);
+                        @include("user.badges.like",['target_user'=>$user])
                     @endforeach
                 </div>
                 <!-- /.tab-pane -->

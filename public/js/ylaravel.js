@@ -1,3 +1,9 @@
+$.ajaxSetup({
+	headers: {
+		'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+	}
+});
+
 var editor = new wangEditor('content');
 if(editor.config){
 	editor.config.uploadImgUrl = '/posts/image/upload';
@@ -16,10 +22,10 @@ $('.like-button').click(function(){
 		//取消关注
 		$.ajax({
 			url:"/user/" + user_id + "/unfan",
-			method:"post",
+			method:"POST",
 			dataType:"json",
 			success:function(response){
-				if(response.status != 0){
+				if(response.error != 0){
 					alert(response.msg);
 					return;
 				}
@@ -30,16 +36,16 @@ $('.like-button').click(function(){
 	}else{
 		//关注
 		$.ajax({
-			url:"/user/" + user_id + "/unfan",
-			method:"post",
+			url:"/user/" + user_id + "/fan",
+			method:"POST",
 			dataType:"json",
 			success:function(response){
-				if(response.status != 0){
+				if(response.error != 0){
 					alert(response.msg);
 					return;
 				}
-				target.attr('like-value',0);
-				target.text('关注');
+				target.attr('like-value',1);
+				target.text('取消关注');
 			}
 		});
 	}
