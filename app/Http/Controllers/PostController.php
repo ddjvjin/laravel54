@@ -99,4 +99,16 @@ class PostController extends Controller
 
         return back();
     }
+
+    public function search() {
+        $this->validate(request(),[
+            'query' => 'required'
+        ]);
+
+        $query = request('query');
+        $posts = \App\Post::search($query)->paginate(2);
+
+
+        return view('post.search',compact('query','posts'));
+    }
 }
