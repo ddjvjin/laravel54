@@ -13,8 +13,8 @@ if(editor.config){
 	editor.create();
 }
 
-$('.like-button').click(function(){
-	var target = $(this);
+$('.like-button').click(function(e){
+	var target = $(e.target);
 	var current_like = target.attr('like-value');
 	var user_id = target.attr('like-user');
 

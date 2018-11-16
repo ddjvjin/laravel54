@@ -3,10 +3,6 @@
 @section("content")
 
 
-    <div class="blog-header">
-    </div>
-
-    <div class="row">
 
     <div class="col-sm-8">
         <blockquote>
@@ -36,8 +32,8 @@
                             <p><p>{!! str_limit($post->content,100,'...') !!}</p>
                         </div>
                     @endforeach
-                
                 </div>
+
                 <!-- /.tab-pane -->
                 <div class="tab-pane" id="tab_2">
                     @foreach($susers as $user)
@@ -47,6 +43,7 @@
                         @include("user.badges.like",['target_user'=>$user])
                     @endforeach
                 </div>
+                
                 <!-- /.tab-pane -->
                 <div class="tab-pane" id="tab_3">
                     @foreach($fusers as $user)
@@ -64,6 +61,5 @@
 
 
     </div><!-- /.blog-main -->
-
-
+</div>
 @endsection
